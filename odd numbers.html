@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even and Odd Number Counter (50-100)</title>
+</head>
+<body>
+
+    <h2>Count of Even and Odd Numbers Between 50 and 100</h2>
+    <p id="resultEven"></p>
+    <p id="resultOdd"></p>
+
+    <script type="text/javascript">
+        // JavaScript code starts here
+        function countEvenOdd() {
+            let evenCount = 0;
+            let oddCount = 0;
+            const startRange = 50;
+            const endRange = 100;
+
+            // Loop through numbers from 50 to 100
+            for (let i = startRange; i <= endRange; i++) {
+                if (i % 2 === 0) {
+                    evenCount++;
+                } else {
+                    oddCount++;
+                }
+            }
+
+            // Display the results in the HTML elements
+            document.getElementById("resultEven").innerText = "Total even numbers: " + evenCount;
+            document.getElementById("resultOdd").innerText = "Total odd numbers: " + oddCount;
+        }
+
+        // Call the function to run the logic and display the results when the page loads
+        countEvenOdd();
+        // JavaScript code ends here
+    </script>
+
+</body>
+</html>
