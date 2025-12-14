@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Area Calculator</title>
+</head>
+<body>
+
+    <h2>Calculate the Area of a Circle</h2>
+
+    <label for="radiusInput">Enter Radius:</label>
+    <input type="number" id="radiusInput" placeholder="e.g., 5">
+    <button onclick="calculateArea()">Calculate</button>
+
+    <p>The area of the circle is: <strong id="result"></strong></p>
+
+    <script>
+        function calculateArea() {
+            // Get the value entered by the user from the input field
+            const radiusInput = document.getElementById("radiusInput");
+            const radius = parseFloat(radiusInput.value); // Convert input string to a number
+
+            // Get the element where the result will be displayed
+            const resultElement = document.getElementById("result");
+
+            // Check if the input is a valid positive number
+            if (!isNaN(radius) && radius > 0) {
+                // Calculate the area using the formula: Area = Math.PI * r * r
+                const area = Math.PI * radius * radius;
+                
+                // Display the result, rounded to two decimal places
+                resultElement.textContent = area.toFixed(2);
+            } else {
+                // Display an error message for invalid input
+                resultElement.textContent = "Please enter a valid, positive number for the radius.";
+            }
+        }
+    </script>
+
+</body>
+</html>
